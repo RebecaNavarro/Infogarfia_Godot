@@ -4,15 +4,16 @@ const ACCELERATION = 500
 const FRICTION = 500
 const MAX_SPEED = 100
 
+
+# estados del player
 enum {
-	MOVE, 
+	MOVE,
 	ROLL,
 	ATTACK
 }
 
-#variable de estado actual
+# variable de estado actual
 var state = MOVE
-
 @export var hp = 100
 
 @onready var animation_tree = $AnimationTree
@@ -46,17 +47,20 @@ func move_state(delta):
 		
 	move_and_slide()
 	
-	if Input.is_action_just_pressed("Attack"):
+	if Input.is_action_just_pressed("attack"):
+		# transicion a ATTACK
 		state = ATTACK
 
 func attack_state(delta):
 	velocity = Vector2.ZERO
 	state_machine.travel("Attack")
-	
-func attck_anim_finished():
+
+func attack_anim_finished():
 	state = MOVE
 
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
 	print("OUCH")
 	hp -= 10
+	if hp <= 0:
+		queue_free()

@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cckfj5hq788cj" path="res://scenes/player.tscn" id="2_k06w8"]
 [ext_resource type="Texture2D" uid="uid://cljkdl8773eo5" path="res://assets/textures/World/DirtTileset.png" id="2_tfbww"]
 [ext_resource type="Texture2D" uid="uid://ls1d16h7bdbe" path="res://assets/textures/World/CliffTileset.png" id="3_58buj"]
-[ext_resource type="PackedScene" uid="uid://bwe584rd5f33g" path="res://scenes/grass.tscn" id="6_0gtbw"]
-[ext_resource type="PackedScene" uid="uid://cyvtw774pgp0" path="res://scenes/bat.tscn" id="7_df3ri"]
+[ext_resource type="PackedScene" uid="uid://c6tq137wg7t8m" path="res://scenes/grass.tscn" id="6_uxuxb"]
+[ext_resource type="PackedScene" uid="uid://c3wshytpftn5q" path="res://scenes/bat.tscn" id="7_8kxu3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_muijd"]
 texture = ExtResource("2_tfbww")
@@ -856,21 +856,28 @@ position = Vector2(34, 63)
 [node name="Bush" parent="." instance=ExtResource("2_bvh6e")]
 position = Vector2(111, 53)
 
-[node name="GroupGrass" type="Node2D" parent="."]
+[node name="GrassGroup" type="Node2D" parent="."]
 
-[node name="Grass" parent="GroupGrass" instance=ExtResource("6_0gtbw")]
-position = Vector2(82, 116)
+[node name="Grass" parent="GrassGroup" instance=ExtResource("6_uxuxb")]
+position = Vector2(96, 117)
 
-[node name="Grass2" parent="GroupGrass" instance=ExtResource("6_0gtbw")]
-position = Vector2(181, 78)
+[node name="Grass2" parent="GrassGroup" instance=ExtResource("6_uxuxb")]
+position = Vector2(104, 154)
 
-[node name="Grass3" parent="GroupGrass" instance=ExtResource("6_0gtbw")]
-position = Vector2(239, 162)
+[node name="Grass3" parent="GrassGroup" instance=ExtResource("6_uxuxb")]
+position = Vector2(214, 87)
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Bat" parent="Enemies" instance=ExtResource("7_df3ri")]
-position = Vector2(38, 63)
+[node name="Bat" parent="Enemies" instance=ExtResource("7_8kxu3")]
+position = Vector2(201, 72)
 
-[node name="Bat2" parent="Enemies" instance=ExtResource("7_df3ri")]
-position = Vector2(214, -23)
+[node name="Bat2" parent="Enemies" instance=ExtResource("7_8kxu3")]
+position = Vector2(73, 157)
+
+[node name="Bat3" parent="Enemies" instance=ExtResource("7_8kxu3")]
+position = Vector2(136, 18)
+
+[node name="Bat4" parent="Enemies" instance=ExtResource("7_8kxu3")]
+position = Vector2(176, 165)
+target = Vector2(100, 50)
