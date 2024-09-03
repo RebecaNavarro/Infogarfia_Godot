@@ -1363,15 +1363,14 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_giqun"]
 states/Axe/node = SubResource("AnimationNodeBlendSpace2D_pppyx")
-states/Axe/position = Vector2(686, 151)
+states/Axe/position = Vector2(685, 150)
 states/Idle/node = SubResource("AnimationNodeBlendSpace2D_5g4xm")
 states/Idle/position = Vector2(483, 135)
 states/Pick/node = SubResource("AnimationNodeBlendSpace2D_4tkah")
 states/Pick/position = Vector2(392, 260)
 states/Run/node = SubResource("AnimationNodeBlendSpace2D_5r6bn")
-states/Run/position = Vector2(482, 48)
+states/Run/position = Vector2(371.5, 36)
 transitions = ["Idle", "Axe", SubResource("AnimationNodeStateMachineTransition_e3l1l"), "Idle", "Pick", SubResource("AnimationNodeStateMachineTransition_keks0"), "Axe", "Idle", SubResource("AnimationNodeStateMachineTransition_cbeod"), "Pick", "Idle", SubResource("AnimationNodeStateMachineTransition_441cy"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_dgl02"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_rb16a"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_mkb0t")]
-graph_offset = Vector2(0, 101.512)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1k5iw"]
 radius = 6.0
@@ -1405,7 +1404,7 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/Axe/blend_position = Vector2(0, 0)
 parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Pick/blend_position = Vector2(0, 0)
-parameters/Run/blend_position = Vector2(-0.227882, 0.726715)
+parameters/Run/blend_position = Vector2(0, 0)
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(-3, 7)
@@ -1420,5 +1419,6 @@ disabled = false
 
 [connection signal="do_attack" from="PlayerControl" to="." method="_on_player_control_do_attack"]
 [connection signal="do_move" from="PlayerControl" to="." method="_on_player_control_do_move"]
+[connection signal="do_put_egg" from="PlayerControl" to="." method="_on_player_control_do_put_egg"]
 
 [editable path="Marker2D/HitBox"]
