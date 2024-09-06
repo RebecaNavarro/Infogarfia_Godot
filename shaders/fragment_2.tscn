@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8lrkmw4xg2kw"]
+
+[ext_resource type="Texture2D" uid="uid://dewqsnil7ousk" path="res://assets/boy2.png" id="1_bh5ih"]
+[ext_resource type="Shader" path="res://shaders/art2.gdshader" id="2_bhjem"]
+[ext_resource type="Texture2D" uid="uid://bkhwen5jyq2bt" path="res://icon.svg" id="2_ol3nb"]
+[ext_resource type="Texture2D" uid="uid://dtk57ugehhl6e" path="res://assets/boy.webp" id="3_1jhxh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fwyv2"]
+shader = ExtResource("2_bhjem")
+
+[node name="Fragment2" type="Node2D"]
+
+[node name="Boy2" type="Sprite2D" parent="."]
+position = Vector2(603, 53)
+scale = Vector2(0.145508, 0.13623)
+texture = ExtResource("1_bh5ih")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_fwyv2")
+offset_left = 24.0
+offset_top = 10.0
+offset_right = 119.0
+offset_bottom = 111.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_fwyv2")
+position = Vector2(215, 59)
+scale = Vector2(0.882812, 0.835938)
+texture = ExtResource("2_ol3nb")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_fwyv2")
+position = Vector2(609, 57)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_1jhxh")

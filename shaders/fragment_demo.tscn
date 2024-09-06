@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://c73ytbahfqidj"]
+
+[ext_resource type="Shader" uid="uid://chms8lqk0v655" path="res://shaders/fragment_demo.tres" id="1_46h63"]
+[ext_resource type="Texture2D" uid="uid://dtk57ugehhl6e" path="res://assets/boy.webp" id="2_cwtc2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0sp82"]
+shader = ExtResource("1_46h63")
+
+[node name="FragmentDemo" type="Node2D"]
+
+[node name="Boy" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0sp82")
+position = Vector2(448, 276)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_cwtc2")

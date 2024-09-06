@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://xpuc6geny4cx"]
+
+[ext_resource type="Shader" path="res://shaders/art2.gdshader" id="1_dfhqn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g4efe"]
+shader = ExtResource("1_dfhqn")
+shader_parameter/spiral_tightness = 5.19
+shader_parameter/spiral_rotations = 7.57
+
+[node name="Patterns" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_g4efe")
+offset_right = 40.0
+offset_bottom = 40.0
